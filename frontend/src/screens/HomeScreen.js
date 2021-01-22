@@ -27,14 +27,14 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>
-      <h2>Top Sellers</h2>
+      <h2>Vendedor leader</h2>
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
       ) : errorSellers ? (
         <MessageBox variant="danger">{errorSellers}</MessageBox>
       ) : (
         <>
-          {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
+          {sellers.length === 0 && <MessageBox>Nenhum vendedor encontrado</MessageBox>}
           <Carousel showArrows autoPlay showThumbs={false}>
             {sellers.map((seller) => (
               <div key={seller._id}>
@@ -47,14 +47,14 @@ export default function HomeScreen() {
           </Carousel>
         </>
       )}
-      <h2>Featured Products</h2>
+      <h2>Produtos em destaque</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <>
-          {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
+          {products.length === 0 && <MessageBox>Nenhum produto encontrado</MessageBox>}
           <div className="row center">
             {products.map((product) => (
               <Product key={product._id} product={product}></Product>
