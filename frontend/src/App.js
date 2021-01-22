@@ -99,7 +99,7 @@ function App() {
                 </ul>
               </div>
             ) : (
-              <Link to="/signin">Sign In</Link>
+              <Link to="/signin">Entrar</Link>
             )}
             {userInfo && userInfo.isSeller && (
               <div className="dropdown">
